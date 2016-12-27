@@ -1,0 +1,28 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFullDatabaseClass;
+use FullRepositoryContract;
+
+/**
+ * Class DummyClass
+ * @package DummyNamespace;
+ */
+class DummyClass implements RepositoryContract
+{
+    /**
+     * @var \DummyFullDatabaseClass
+     */
+    protected $DummyDatabaseVariable;
+    
+    /**
+     * DummyClass constructor.
+     *
+     * @var DummyDatabaseClass $DummyDatabaseVariable
+     */
+    public function __construct(DummyDatabaseClass $DummyDatabaseVariable)
+    {
+        $this->DummyDatabaseVariable = $DummyDatabaseVariable;
+    }
+}

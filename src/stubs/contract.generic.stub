@@ -1,0 +1,51 @@
+<?php
+
+namespace DummyNamespace;
+
+/**
+ * Interface DummyClass
+ * @package DummyNamespace;
+ */
+interface DummyClass
+{
+    /**
+     * Find given DummyDatabaseClass.
+     *
+     * @param DummyDatabaseClass|int|array|\Closure $DummyDatabaseVariable
+     * @return DummyDatabaseClass
+     */
+    public function find($user);
+
+    /**
+     * Find first DummyDatabaseClass where..
+     *
+     * @param array|\Closure $where
+     * @return mixed
+     */
+    public function first($where);
+
+    /**
+     * Create new DummyDatabaseClass with given attributes.
+     *
+     * @param array $attributes
+     * @return DummyDatabaseClass
+     */
+    public function create(array $attributes);
+
+    /**
+     * Update given DummyDatabaseClass with attributes.
+     *
+     * @param DummyDatabaseClass|int|array|\Closure $DummyDatabaseVariable
+     * @param array $attributes
+     * @return bool
+     */
+    public function update($DummyDatabaseVariable, array $attributes);
+
+    /**
+     * Delete given DummyDatabaseClass.
+     *
+     * @param DummyDatabaseClass|int|array|\Closure $DummyDatabaseVariable
+     * @return bool|null
+     */
+    public function delete($DummyDatabaseVariable);
+}

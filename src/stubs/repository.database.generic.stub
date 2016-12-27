@@ -1,0 +1,90 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyFullDatabaseClass;
+use FullRepositoryContract;
+
+/**
+ * Class DummyClass
+ * @package DummyNamespace;
+ */
+class DummyClass implements RepositoryContract
+{
+    /**
+     * @var \DummyFullDatabaseClass
+     */
+    protected $DummyDatabaseVariable;
+
+    /**
+     * DummyClass constructor.
+     *
+     * @var DummyDatabaseClass $DummyDatabaseVariable
+     */
+    public function __construct(DummyDatabaseClass $DummyDatabaseVariable)
+    {
+        $this->DummyDatabaseVariable = $DummyDatabaseVariable;
+    }
+
+    /**
+     * Find given DummyDatabaseClass.
+     *
+     * @param DummyDatabaseClass|int|array|\Closure $DummyDatabaseVariable
+     * @return DummyDatabaseClass
+     */
+    public function find($user)
+    {
+        if (! $DummyDatabaseVariable instanceof DummyDatabaseClass) {
+           $DummyDatabaseVariable = is_numeric($DummyDatabaseVariable)
+                ? $this->DummyDatabaseVariable->find($DummyDatabaseVariable)
+                : $this->first($DummyDatabaseVariable);
+        }
+
+        return $this->find($DummyDatabaseVariable->getKey());
+    }
+
+    /**
+     * Find first DummyDatabaseClass where..
+     *
+     * @param array|\Closure $where
+     * @return mixed
+     */
+    public function first($where)
+    {
+        return $this->DummyDatabaseVariable->where($where)->first();
+    }
+
+    /**
+     * Create new DummyDatabaseClass with given attributes.
+     *
+     * @param array $attributes
+     * @return DummyDatabaseClass
+     */
+    public function create(array $attributes)
+    {
+        return $this->DummyDatabaseVariable->create($attributes);
+    }
+
+    /**
+     * Update given DummyDatabaseClass with attributes.
+     *
+     * @param DummyDatabaseClass|int|array|\Closure $DummyDatabaseVariable
+     * @param array $attributes
+     * @return bool
+     */
+    public function update($DummyDatabaseVariable, array $attributes)
+    {
+        return $this->find($DummyDatabaseVariable)->update($attributes);
+    }
+
+    /**
+     * Delete given DummyDatabaseClass.
+     *
+     * @param DummyDatabaseClass|int|array|\Closure $DummyDatabaseVariable
+     * @return bool|null
+     */
+    public function delete($DummyDatabaseVariable)
+    {
+        return $this->find($DummyDatabaseVariable)->delete();
+    }
+}

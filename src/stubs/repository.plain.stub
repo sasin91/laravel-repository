@@ -1,0 +1,14 @@
+<?php
+
+namespace DummyNamespace;
+
+use ContractNamespace;
+
+/**
+ * Class DummyClass
+ * @package DummyNamespace;
+ */
+class DummyClass implements RepositoryContract
+{
+    //
+}
