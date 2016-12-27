@@ -27,5 +27,5 @@
   "suggest": {
     "league/fractal": "League's well-known Fractal Transformer."
   },
-  "minimum-stability": "dev-master"
+  "minimum-stability": "dev"
 }
