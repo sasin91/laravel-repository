@@ -10,12 +10,14 @@ Laravel 5 Repositories is used to abstract the data layer, making our applicatio
 Execute the following command to get the latest version of the package:
 
 ```terminal
-composer require sasin91/laravel-repository
+composer require sasin91/laravel-repository:@dev
 ```
 
 Note, to pull this in you might need to set your minimum stability in composer.json
+optionally, prefer stable releases.
 ```composer.json
 "minimum-stability":"dev",
+"prefer-stable": true
 ```
 
 ### Laravel
