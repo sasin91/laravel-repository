@@ -66,12 +66,6 @@ class RepositoryMakeCommand extends GeneratorCommand
             $this->input->setOption('database', $this->parseModel($this->option('model')));
         }
 
-        if (! $this->option('database')) {
-            if ($guess = $this->guessDatabase()) {
-                $this->input->setOption('database', $guess);
-            }
-        }
-
         $this->files->put($this->getPath($this->contract), $this->buildContract($name));
         $this->files->put($path, $this->buildClass($name));
 
@@ -106,16 +100,6 @@ class RepositoryMakeCommand extends GeneratorCommand
         return $this->stubPath('repository.plain.stub');
     }
 
-    protected function guessDatabase()
-    {
-        $name = $this->getNameInput();
-        if (Str::endsWith($name, 'Repository')) {
-            $name = str_replace_last('Repository', '', $name);
-        }
-
-        return $this->laravel->getNamespace().$name;
-    }
-
     protected function getContractStub()
     {
         if ($this->option('generic')) {
@@ -143,7 +127,6 @@ class RepositoryMakeCommand extends GeneratorCommand
     protected function buildContract($name)
     {
         $stub = $this->files->get($this->getContractStub());
-
 
         $replace = [];
 
