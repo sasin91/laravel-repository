@@ -42,7 +42,10 @@ class RepositoryMakeCommand extends GeneratorCommand
      */
     public function fire()
     {
-        $name = $this->parseName($this->getNameInput());
+        $name = (Str::contains($this->laravel->version(), '5.4'))
+        ? $this->qualifyClass($this->getNameInput())
+        : $this->parseName($this->getNameInput());
+        
         $this->contract($name);
 
         $path = $this->getPath($name);
